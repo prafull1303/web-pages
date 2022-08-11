@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<title>Sort a HTML List Alphabetically</title>
+<body>
+
+<p>Click the button to sort the list alphabetically:</p>
+<button onclick="sortList()">Sort</button>
+
+<h2>List of Order</h2>
+      <ol id="id01" type="A">
+         <li>Apple</li>
+         <li>Mango</li>
+         <li>Banana</li>
+         <li>Grapes</li>
+         <li>Orange</li>
+      </ol>
+
+<button onclick="sortList1()">Sort</button>
+     <h2>List of Unorder</h2>
+       <ul id="id02"  type="circle">
+         <li>Potato</li>
+         <li>Cabbage</li>
+         <li>Onion</li>
+         <li>Capsicum</li>
+         <li>Tomato</li>
+      </ul>
+
+<button onclick="sortList2()">Sort</button>
+  <h2>List of Nested</h2>
+    <ol id="id03">
+     <li>Blue</li>
+     <li>Red</li>
+    <ol id="id03" type="i" start="i">
+     <li>Light Blue</li>
+     <li>Dark Blue</li>
+    </ol>
+     <li>Green</li>
+    </ol>
+
+<script>
+function sortList() {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById("id01");
+  switching = true;
+  
+  while (switching) {
+    
+    switching = false;
+    b = list.getElementsByTagName("LI");
+   
+    for (i = 0; i < (b.length - 1); i++) {
+      
+      shouldSwitch = false;
+      
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+    
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+     
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+
+
+function sortList1() {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById("id02");
+  switching = true;
+  
+  while (switching) {
+    
+    switching = false;
+    b = list.getElementsByTagName("LI");
+   
+    for (i = 0; i < (b.length - 1); i++) {
+      
+      shouldSwitch = false;
+      
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+    
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+     
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+
+
+function sortList2() {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById("id03");
+  switching = true;
+  
+  while (switching) {
+    
+    switching = false;
+    b = list.getElementsByTagName("LI");
+   
+    for (i = 0; i < (b.length - 1); i++) {
+      
+      shouldSwitch = false;
+      
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+    
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+     
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+
+</body>
+</html>
